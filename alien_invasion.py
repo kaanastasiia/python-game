@@ -24,12 +24,12 @@ class AlienInvasion:
             elif event.type == pygame.KEYDOWN:  
                 if event.key == pygame.K_RIGHT:
                     self.ship.moving_right = True
-                    self.ship.update()
-            #elif event.key == pygame.KEYUP:
-            #    moving_right == False
+            elif event.type == pygame.KEYUP:
+                self.ship.moving_right = False
 
     def _update_screen(self):
         self.screen.fill(self.bg_color)
+        self.ship.update()
         self.ship.blitme()                
         pygame.display.flip()
 

@@ -15,7 +15,7 @@ class Ship:
 
     def update(self):
         if self.moving_right:
-            self.rect.x += 1
+            self.rect.x += 0.5
 
             #self.moving_right = False
             

@@ -1,6 +1,7 @@
 import sys
 from settings import Settings
 from ship import Ship
+import bullet from Bullet
 import pygame
 
 class AlienInvasion:
@@ -13,6 +14,7 @@ class AlienInvasion:
         self.settings.screen_height = self.screen.get_rect().height
         pygame.display.set_caption("Alien Invasion")
         self.ship = Ship(self)
+        self.bullet = Bullet(self)
         self.bg_color = self.settings.bg_color
 
     def run_game(self):

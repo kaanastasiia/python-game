@@ -14,8 +14,8 @@ class Ship:
     def blitme(self):
         self.screen.blit(self.image,self.rect)
 
-    def update(self):
+    def update(self, ship_speed):
         if self.moving_right:
-            self.rect.x += 1
+            self.rect.x += ship_speed
         if self.moving_left:
-            self.rect.x -= 1
+            self.rect.x -= ship_speed

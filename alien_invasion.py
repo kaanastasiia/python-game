@@ -10,7 +10,8 @@ class AlienInvasion:
         self.screen = pygame.display.set_mode((self.settings.screen_width, self.settings.screen_height))
         pygame.display.set_caption("Alien Invasion")
         self.ship = Ship(self)
-        self.bg_color = (self.settings.bg_color)
+        self.bg_color = self.settings.bg_color
+        self.ship_speed = self.settings.ship_speed
 
     def run_game(self):
         while True:
@@ -35,7 +36,7 @@ class AlienInvasion:
 
     def _update_screen(self):
         self.screen.fill(self.bg_color)
-        self.ship.update()
+        self.ship.update(self.ship_speed)
         self.ship.blitme()                
         pygame.display.flip()
 

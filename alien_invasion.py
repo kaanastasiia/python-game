@@ -19,13 +19,14 @@ class AlienInvasion:
    
     def _check_events(self):
         for event in pygame.event.get():
-            self._quit_game(event)
+            self._quit_game_on_button(event)
             self._check_keydown_events(event)
             self._check_keyup_events(event)
 
-    def _quit_game(self, event):
+    def _quit_game_on_button(self, event):
         if event.type == pygame.QUIT:
             pygame.QUIT()
+        
 
     def _check_keydown_events(self, event):
         if event.type == pygame.KEYDOWN:  
@@ -33,6 +34,9 @@ class AlienInvasion:
                 self.ship.moving_right = True
             elif event.key == pygame.K_LEFT:
                 self.ship.moving_left = True
+            elif event.key == pygame.K_q:
+                pygame.QUIT()
+
 
     def _check_keyup_events(self, event):
         if event.type == pygame.KEYUP:
